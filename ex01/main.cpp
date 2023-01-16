@@ -6,7 +6,7 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 10:12:24 by aweaver           #+#    #+#             */
-/*   Updated: 2023/01/13 19:50:52 by aweaver          ###   ########.fr       */
+/*   Updated: 2023/01/16 14:44:16 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ int	main(void)
 		tab[4] = 5;
 		iter(tab, 5, print);
 		delete[] tab;
+	}
+	{
+		int tab[] = {1, 2, 3};
+		iter(tab, 3, print);
 	}
 	return (0);
 }
