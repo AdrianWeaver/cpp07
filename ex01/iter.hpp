@@ -6,7 +6,7 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:10:29 by aweaver           #+#    #+#             */
-/*   Updated: 2023/01/16 14:43:36 by aweaver          ###   ########.fr       */
+/*   Updated: 2023/01/16 19:07:04 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 # include <iostream>
 
-//this version implicitely authorise modification of parameters
 template <typename T>
-void	iter(T* tab, unsigned int size, void (*funct)(T))
+void	iter(T* tab, unsigned int size, void (*funct)(const T&))
 {
 	for (unsigned int i = 0; i < size; i++)
 	{
@@ -26,7 +25,7 @@ void	iter(T* tab, unsigned int size, void (*funct)(T))
 }
 
 template <typename T>
-void	print(T element)
+void	print(const T &element)
 {
 	std::cout << element << std::endl;
 }
