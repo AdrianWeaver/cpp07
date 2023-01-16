@@ -6,7 +6,7 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:47:47 by aweaver           #+#    #+#             */
-/*   Updated: 2023/01/16 17:58:46 by aweaver          ###   ########.fr       */
+/*   Updated: 2023/01/16 18:13:58 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class Array
 			}
 			return (*this);
 		};
-		T& operator[](unsigned int index)
+		T& operator[](unsigned int index) const
 		{
 			if (index >= capacity)
 				throw (std::exception());

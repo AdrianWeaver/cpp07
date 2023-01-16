@@ -6,7 +6,7 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:47:07 by aweaver           #+#    #+#             */
-/*   Updated: 2023/01/16 17:12:34 by aweaver          ###   ########.fr       */
+/*   Updated: 2023/01/16 18:30:01 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 #include <ctime>
 
 #define MAX_VAL 750
+
+template <typename T>
+std::ostream& operator<<(std::ostream &os, Array<T> const& rhs)
+{
+	for (unsigned int i = 0; i < rhs.size(); i++)
+	{
+		std::cout << "My array stores " << rhs[i] << " at index " << i << std::endl;
+	}
+	return (os);
+}
 
 int main(int, char**)
 {
@@ -64,5 +74,35 @@ int main(int, char**)
 		numbers[i] = rand();
 	}
 	delete [] mirror;//
+	{
+		try
+		{
+			Array<std::string> dictionary(-1);
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		try
+		{
+			std::cout << "how many lines would you like to save ?" << std::endl;
+			unsigned int amount;
+			std::cin >> amount; std::cin.ignore();
+			Array<std::string> dictionary(amount);
+			std::cout << "my dictionnary has a size of: " << dictionary.size() << std::endl;
+			for (unsigned int i = 0; i < amount; i++)
+			{
+				std::cout << "Please provide line number " << i + 1 << ":" << std::endl;
+				std::cin >> dictionary[i];
+			}
+			std::cin.ignore();
+			std::cout << dictionary << std::endl;
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
 	return 0;
 }
+
